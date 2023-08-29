@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secrets Example</title>
+</head>
+<body>
+    <h1>API Key:</h1>
+    <p id="api-key"></p>
+
+    <script>
+        // Accede al secreto desde el archivo JavaScript en tu página
+        const apiKey = process.env.API_KEY;
+
+        // Muestra el secreto en la página web
+        document.getElementById("api-key").textContent = apiKey;
+    </script>
+</body>
+</html>
