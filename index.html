@@ -10,11 +10,10 @@
     <p id="api-key"></p>
 
     <script>
-        // Accede al secreto desde el archivo JavaScript en tu página
-        const apiKey = process.env.API_KEY;
-
-        // Muestra el secreto en la página web
+        // Accede al secreto desde una variable global inyectada por GitHub Actions
+        const apiKey = window.GITHUB_API_KEY;
         document.getElementById("api-key").textContent = apiKey;
     </script>
 </body>
 </html>
+
