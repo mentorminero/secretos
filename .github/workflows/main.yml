@@ -1,0 +1,29 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Build and Deploy
+      run: |
+        # Configura el secreto como una variable de entorno
+        export API_KEY="${{ secrets.API_KEY }}"
+
+        # Lanza tu proceso de compilación y despliegue aquí
+        # Por ejemplo, puedes utilizar npm para construir tu sitio web
+        npm install
+        npm run build
+
+        # Copia los archivos generados (por ejemplo, en la carpeta "dist") a la carpeta adecuada para GitHub Pages
+        cp -r dist/* docs/
+      env:
+        API_KEY: ${{ secrets.API_KEY }}
