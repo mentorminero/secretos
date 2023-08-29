@@ -12,6 +12,8 @@
     <script>
         // Accede al secreto desde una variable global inyectada por GitHub Actions
         const apiKey = window.GITHUB_API_KEY;
+        console.log(apiKey);
+        console.log("asdadsd");
         document.getElementById("api-key").textContent = apiKey;
     </script>
 </body>
